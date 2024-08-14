@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+class DaysInMonth {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the date
+        System.out.print("Enter the date in dd-mm-yyyy format: ");
+        String date = scanner.nextLine();
+
+        // Extract the month from the entered date
+        int month = Integer.parseInt(date.split("-")[1]);
+
+        // Determine the number of days in the entered month
+        int daysInMonth;
+        if (month == 2) {
+            daysInMonth = 28; // February
+        } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            daysInMonth = 30; // April, June, September, November
+        } else {
+            daysInMonth = 31; // All other months
+        }
+
+        // Output the result
+        System.out.println("Number of days in month " + month + " is: " + daysInMonth);
+    }
+}

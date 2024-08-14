@@ -1,0 +1,26 @@
+class PrimeCheck {
+    public static void main(String[] args) {
+        int num = 29; // Change this to test with different numbers
+
+        if (isPrime(num)) {
+            System.out.printf("The number %d is prime.\n", num);
+            System.out.printf("Square root of %d is: %.2f\n", num, Math.sqrt(num));
+        } else {
+            System.out.printf("The number %d is not prime.\n", num);
+        }
+    }
+
+    public static boolean isPrime(int n) {
+        // A prime number must be greater than 1
+        if (n <= 1) {
+            return false;
+        }
+        // Check divisibility from 2 to the square root of n
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false; // n is divisible by i, so it's not prime
+            }
+        }
+        return true; // n is prime
+    }
+}

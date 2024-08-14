@@ -1,0 +1,24 @@
+class HelloWorld {
+    public static void main(String[] args) {
+        String s = "mam";  // Example input
+        int n = s.length();
+        boolean result = isPalindrome(s, n);
+        System.out.println("Is the string a palindrome? " + result);
+    }
+
+    public static boolean isPalindrome(String s, int n) {
+        int left = 0;
+        int right = n - 1;
+
+        // Check from both ends of the string
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false; // Not a palindrome if characters don't match
+            }
+            left++;
+            right--;
+        }
+
+        return true; // String is a palindrome if all characters match
+    }
+}

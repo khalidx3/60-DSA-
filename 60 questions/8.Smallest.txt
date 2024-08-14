@@ -1,0 +1,22 @@
+class PrimeCheck {
+    public static void main(String[] args) {
+        int arr[] = {-2,0,2};
+        int n = 3;
+        
+        int result = isSmallest(arr,n);
+        System.out.println(result);
+    }
+
+    public static int isSmallest(int arr[],int n) {
+        // A prime number must be greater than 1
+        int smallest=0;
+        for(int i=0;i<n;i++){
+            
+          if(arr[i]<smallest){
+              smallest = arr[i];
+        }
+        
+    }
+    return smallest;
+    }
+}

@@ -1,0 +1,19 @@
+class HelloWorld {
+    public static void main(String[] args) {
+        int n = 625;
+        boolean result = isPerfectSquare(n); // Correct method name and usage
+        if (result) {
+            System.out.println("success");
+        } else {
+            System.out.println("failure");
+        }
+    }
+
+    public static boolean isPerfectSquare(int n) {
+        if (n < 0) {
+            return false; // Negative numbers cannot be perfect squares
+        }
+        int sqrt = (int) Math.sqrt(n);
+        return (sqrt * sqrt == n);
+    }
+}

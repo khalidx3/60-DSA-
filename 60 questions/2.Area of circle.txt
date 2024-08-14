@@ -1,0 +1,14 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+    int n =3;
+    System.out.println(area(n));
+    }
+    public static double area(int n){
+       double radius = n / 2.0;
+        double area = Math.PI * Math.pow(radius, 2);
+        return area;
+    }
+}

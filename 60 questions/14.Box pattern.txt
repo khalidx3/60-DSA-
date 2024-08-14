@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class BoxNumberPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Input number of rows and columns
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter number of columns: ");
+        int cols = scanner.nextInt();
+        
+        // Print the bordered box pattern
+        printBorderedBoxPattern(rows, cols);
+        
+        scanner.close();
+    }
+    
+    public static void printBorderedBoxPattern(int rows, int cols) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                // Print 1 for the border (i.e., first and last rows and columns)
+                if (i == 0 || i == rows - 1 || j == 0 || j == cols - 1) {
+                    System.out.print("1");
+                } else {
+                    // Print 0 for the inner part of the box
+                    System.out.print("0");
+                }
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+}

@@ -1,0 +1,25 @@
+class PrimeCheck {
+    public static void main(String[] args) {
+        int arr[] = {12,8,47};
+        int n = 3;
+        
+        int result = isGreatest(arr,n);
+        System.out.println(result);
+    }
+
+    public static int isGreatest(int arr[],int n) {
+        // A prime number must be greater than 1
+        int greatest=0;
+        if(greatest<0){
+                return 0;
+            }
+        for(int i=0;i<n;i++){
+            
+          if(arr[i]>greatest){
+              greatest = arr[i];
+        }
+        
+    }
+    return greatest;
+    }
+}

@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read the integer n
+        int n = sc.nextInt();
+
+        // Create an array to store the integers
+        int arr[] = new int[n];
+
+        // Read n integers and store them in the array
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Calculate the length of the longest subsequence
+        int result = longestTripleSubsequence(arr, n);
+
+        // Print the result
+        System.out.println(result);
+    }
+
+    public static int longestTripleSubsequence(int arr[], int n) {
+        if (n == 0) return 0;
+
+        // Create an array to store the length of the longest subsequence ending at each index
+        int[] dp = new int[n];
+
+        // Initialize each element to be a subsequence of length 1 by itself
+        for (int i = 0; i < n; i++) {
+            dp[i] = 1;
+        }
+
+        int maxLength = 1;
+
+        // Fill dp array
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                // Check if the current element is triple the previous element
+                if (arr[i] == 3 * arr[j]) {
+                    // Update the dp value for the current element
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+            }
+            // Update the maximum length of the subsequence found so far
+            maxLength = Math.max(maxLength, dp[i]);
+        }
+
+        return maxLength;
+    }
+}
